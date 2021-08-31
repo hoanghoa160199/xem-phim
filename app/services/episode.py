@@ -1,5 +1,6 @@
 import pymongo
 from app.model.episode import Episode
+from .season import SeasonService
 from .database import DatabaseConnection
 
 
@@ -16,6 +17,13 @@ class EpisodeService:
 
     def delete(self, id_episode: str):
         connect = self.connect_database
+        delete_id_in_season = SeasonService().get_all_season_of_movie()
+        for i in delete_id_in_season:
+            for delete_id in i['episodes']:
+                if delete_id == id_episode:
+                    i['episodes'].remove(delete_id)
+                    SeasonService().update(i)
+                    break
         result = connect.find_one_and_delete({'id': id_episode})
         result.pop('_id')
         return result

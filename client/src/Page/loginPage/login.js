@@ -6,13 +6,22 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import FormItem from 'antd/lib/form/FormItem';
+import Home from '../homePage/home';
+import Register from '../registerPage/register';
+import { Route, useHistory } from "react-router-dom";
 
 const Login = () => {
+    const history = useHistory();
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
     };
-
+    const onClickLogin = () => {
+        history.push('/home')
+    };
     return (
+        <div>
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/register" component={Register} />
         <Form
             name="normal_login"
             className="login-form"
@@ -48,10 +57,10 @@ const Login = () => {
             </Form.Item>
 
             <Form.Item className='login-form-button'>
-                <Button type="primary" htmlType="submit" className="form-button">
+                <Button type="primary" htmlType="submit" className="form-button" onClick={onClickLogin}>
                     Log in
                 </Button>
-                <a href="asdasdasd" className="registor">register now!</a>
+                <a href = "http://localhost:3000/register">register now!</a>
             </Form.Item>
             <Form.Item>
                 <GoogleLogin
@@ -72,6 +81,7 @@ const Login = () => {
                 />
             </Form.Item>
         </Form>
+        </div>
     );
 };
 export default Login;

@@ -1,0 +1,36 @@
+.description{
+    width: 600px;
+    font-size: small !important;
+}
+.movie{
+    width: 600px !important;
+    margin-top: 20px !important;
+}
+.ant-descriptions-item-content{
+    color: aliceblue !important;
+    font-size: 10px !important;
+}
+.ant-descriptions-title{
+    color: aliceblue !important;
+    font-size: 12px !important;
+}
+.ant-descriptions-item-label{
+    color: aliceblue !important;
+    font-size: 12px !important;
+}
+.Recommendations{
+   float: right !important;
+   margin-top: -785px!important;
+}
+.movie_card{
+    margin-left: -300px !important;
+}
+.image_recomment{
+    margin-bottom: 30px;
+    width: 200px;
+    height: 120px;
+}
+.descrpition_recomment{
+    margin-top: -100px !important;
+    margin-left: -90px !important;
+}

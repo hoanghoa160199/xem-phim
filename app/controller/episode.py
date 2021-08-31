@@ -5,7 +5,7 @@ EPISODE_SERVICE = EpisodeService()
 
 
 @episode.post("/add-episode")
-async def add_category(data: dict):
+async def add_episode(data: dict):
     return EPISODE_SERVICE.create(data)
 
 
